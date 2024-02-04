@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>備蓄品一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>備蓄品名称</th>
+      <th>購入数量</th>
+      <th>購入日</th>
+      <th>消費期限</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stockitems.each do |stockitem| %>
+      <tr>
+        <td><%= stockitem.name %></td>
+        <td><%= stockitem.quantity %></td>
+        <td><%= stockitem.purchase_date.strftime('%Y-%m-%d') %></td>
+        <td><%= stockitem.expiration_date.strftime('%Y-%m-%d') %></td>
+        <td><%= link_to '詳細', stockitem %></td>
+        <td><%= link_to '編集', edit_stockitem_path(stockitem) %></td>
+        <td><%= link_to '削除', stockitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

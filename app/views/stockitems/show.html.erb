@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stockitem.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @stockitem.quantity %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @stockitem.purchase_date %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @stockitem.expiration_date %>
+</p>
+
+<%= link_to 'Edit', edit_stockitem_path(@stockitem) %> |
+<%= link_to 'Back', stockitems_path %>

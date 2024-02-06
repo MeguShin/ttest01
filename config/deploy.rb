@@ -10,7 +10,7 @@ set :rbenv_ruby, '3.0.1'    # 7
 set :log_level, :info   # 8
 append :linked_files, 'config/secrets.yml'
 
-after 'deploy:published', 'deploy:seed'   # 9
+after 'deploy:published'   # 9
 after 'deploy:finished', 'deploy:restart'   # 10
 
 namespace :deploy do

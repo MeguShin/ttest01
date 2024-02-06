@@ -10,7 +10,7 @@ set :rbenv_ruby, '3.0.1'    # 7
 set :log_level, :info   # 8
 append :linked_files, 'config/secrets.yml'
 
-after 'deploy:published'   # 9
+after 'deploy:published', 'deploy:seed'   # 9
 after 'deploy:finished', 'deploy:restart'   # 10
 
 namespace :deploy do
@@ -19,7 +19,7 @@ task :seed do
     on roles(:db) do
     with rails_env: fetch(:rails_env) do
         within current_path do
-        execute :bundle, :exec, :rake
+        execute :bundle, :exec, :rake, 'db:seed'
         end
     end
     end

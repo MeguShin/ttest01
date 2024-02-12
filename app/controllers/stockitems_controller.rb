@@ -1,6 +1,7 @@
 class StockitemsController < ApplicationController
   before_action :set_stockitem, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
+  
   # GET /stockitems or /stockitems.json
   def index
     @stockitems = Stockitem.all

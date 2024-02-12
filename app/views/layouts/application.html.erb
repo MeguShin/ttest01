@@ -11,18 +11,24 @@
   </head>
 
   <body>
-    <nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <nav>
+    <% if user_signed_in? %>
       <ul>
         <li><%= link_to '備蓄品一覧', stockitems_path %></li>
         <li><%= link_to '備蓄品登録', new_stockitem_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>
-    </nav>
-
+    <% else %>
+      <ul>
+        <li><%= link_to '新規登録', new_user_registration_path %></li>
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+      </ul>
+    <% end %>
+  </nav>
     <div class="container">
       <%= yield %>
     </div>
-
-    <!-- 他のフッターやスクリプトなど -->
-
   </body>
 </html>

@@ -10,6 +10,7 @@ module Ttest01
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.i18n.default_locale = :ja
     config.generators do |g|
       g.assets false
       g.helper false

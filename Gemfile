@@ -31,6 +31,8 @@ gem 'unicorn'
 gem 'devise'
 gem 'rexml'
 gem 'devise-i18n'
+gem 'aws-sdk-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

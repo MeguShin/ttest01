@@ -76,5 +76,5 @@ Rails.application.configure do
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.default_url_options = { host: 'stockmanagementapp.com' }
   #config.require_master_key = true
-  config.action_mailer.delivery_method = :ses
+  #config.action_mailer.delivery_method = :ses
 end

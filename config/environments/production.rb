@@ -104,7 +104,11 @@ Rails.application.configure do
     credentials:, # Ruby 3.1の文法
     region: 'us-east-1'
   )
-
+  config.action_mailer.default_url_options = { host: 'stockmanagementapp.com' }
+  config.action_mailer.delivery_method = :ses
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true  
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
